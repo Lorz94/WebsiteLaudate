@@ -262,12 +262,14 @@ nav {
 
 .immagine-sfondo {
     position: absolute;
-    opacity: 0.2;
+    opacity: 0.1;
     z-index: -1;
-    align-self: center;
-    top: -8%;
-    left: 45%;
-    height: 100%;
+    left: 65%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    max-width: 50%;
+    object-fit: contain;
 }
 
 .button {
@@ -751,6 +753,10 @@ footer {
 }
 
 @media (max-width: 1600px) {
+    .immagine-sfondo {
+        display:none
+    }
+
     .section {
         display: flex;
         flex-direction: column;
@@ -770,6 +776,10 @@ footer {
 }
 
 @media (max-width: 1200px) {
+    .immagine-sfondo {
+        display:none
+    }
+
     .section {
         padding: 4em 5em;
     }
@@ -790,7 +800,7 @@ footer {
 
 @media (max-width: 800px) {
     .immagine-sfondo {
-        display: none;
+        display:none
     }
 
     nav {
@@ -843,18 +853,21 @@ footer {
     }
 
     #direttore {
-        flex-direction: column-reverse;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100vw;
     }
 
-    .director-cv,
-    .director-image {
-        width: 100%;
+    .director-cv {
+        order: 1;
         max-width: 100%;
+        width: 100%;
     }
 
-    .director-image img {
+    .director-image {
+        order: 2;
+        max-width: 100%;
         width: 100%;
-        height: auto;
     }
 
     .event {
@@ -921,6 +934,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .immagine-sfondo {
+        display:none
+    }
+
     nav { padding: 0 2em; }
 
     .logo-img {
@@ -1031,9 +1048,25 @@ footer {
 
     .prev { left: 5px; }
     .next { right: 5px; }
+
+    #direttore {
+        flex-direction: column;
+    }
+
+    .director-cv {
+        order: 1;
+    }
+
+    .director-image {
+        order: 2;
+    }
 }
 
 @media (max-width: 360px) {
+    .immagine-sfondo {
+        display:none
+    }
+
     h1 { font-size: 1.5em; }
     h3 { font-size: 1.3em; }
 
